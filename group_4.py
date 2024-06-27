@@ -20,3 +20,14 @@ for word in words:
                     for i, letter in enumerate(word): 
                         grid[row][col + i] = letter 
                     placed = True
+                    placed = True
+        else:  # Place vertically
+            placed = False
+            while not placed:
+                row = random.randint(1, grid_size - len(word) - 1)  # Random starting row
+                col = random.randint(1, grid_size - 2)  # Random column (excluding borders)
+                if all(grid[row+i][col] == ' ' for i in range(len(word))):
+                    for i, letter in enumerate(word):
+                        grid[row + i][col] = letter
+                    placed = True
+                  
