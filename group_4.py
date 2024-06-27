@@ -10,3 +10,13 @@ def create_crossword(words):
     grid = [[' ' for _ in range(grid_size)] for _ in range(grid_size)]
 
     # Place words horizontally or vertically randomly
+for word in words: 
+        if random.choice([True, False]):  # Place horizontally 
+            placed = False 
+            while not placed: 
+                row = random.randint(1, grid_size - 2)  # Random row (excluding borders) 
+                col = random.randint(1, grid_size - len(word) - 1)  # Random starting column 
+                if all(grid[row][col+i] == ' ' for i in range(len(word))): 
+                    for i, letter in enumerate(word): 
+                        grid[row][col + i] = letter 
+                    placed = True
