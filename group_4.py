@@ -20,7 +20,7 @@ for word in words:
                     for i, letter in enumerate(word): 
                         grid[row][col + i] = letter 
                     placed = True
-                    placed = True
+                    
         else:  # Place vertically
             placed = False
             while not placed:
